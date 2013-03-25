@@ -6,8 +6,8 @@ require 'cnab/version'
 Gem::Specification.new do |gem|
   gem.name          = "cnab"
   gem.version       = Cnab::VERSION
-  gem.authors       = ["Paulo Henrique Lopes Ribeiro"]
-  gem.email         = ["plribeiro3000@gmail.com"]
+  gem.authors       = ["Paulo Henrique Lopes Ribeiro", "Matheus Mina"]
+  gem.email         = ["plribeiro3000@gmail.com", "mfbmina@gmail.com"]
   gem.description   = %q{Gem used to parse CNAB files}
   gem.summary       = %q{It parse CNAB files}
 

@@ -6,4 +6,6 @@ module Cnab
   autoload :TrailerArquivo, 'cnab/trailer_arquivo'
   autoload :TrailerLote, 'cnab/trailer_lote'
   autoload :Detalhe, 'cnab/detalhe'
+
+  autoload :Helper, 'cnab/helper'
 end

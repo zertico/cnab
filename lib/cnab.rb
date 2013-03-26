@@ -9,4 +9,5 @@ module Cnab
   autoload :Retorno, 'cnab/retorno'
 
   autoload :Helper, 'cnab/helper'
+  autoload :Exceptions, 'cnab/exceptions'
 end

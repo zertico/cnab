@@ -10,4 +10,29 @@ module Cnab
 
   autoload :Helper, 'cnab/helper'
   autoload :Exceptions, 'cnab/exceptions'
+
+  def self.parse(file = nil)
+    raise Exceptions::NoFileGiven if file.nil?
+
+    File.open(file, 'rb') do |f|
+      header_arquivo = HeaderArquivo.new(f.gets)
+      header_lote = HeaderLote::Cobranca.new(f.gets)
+
+      detalhes = []
+      while(line = f.gets)
+        if line[7] == "5"
+          trailer_lote = TrailerLote::Cobranca.new(line)
+          break
+        end
+        detalhes << Detalhe.parse(line)
+      end
+
+      trailer_arquivo = TrailerArquivo.new(f.gets)
+      Retorno.new({ :header_arquivo => header_arquivo,
+                    :header_lote => header_lote,
+                    :detalhes => detalhes,
+                    :trailer_lote => trailer_lote,
+                    :trailer_arquivo => trailer_arquivo  })
+    end
+  end
 end

@@ -2,7 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/cnab.png)](http://badge.fury.io/rb/cnab) [![Build Status](https://travis-ci.org/zertico/cnab.png)](https://travis-ci.org/zertico/cnab) [![Coverage Status](https://coveralls.io/repos/zertico/cnab/badge.png?branch=master)](https://coveralls.io/r/zertico/cnab) [![Code Climate](https://codeclimate.com/github/zertico/cnab.png)](https://codeclimate.com/github/zertico/cnab)
 
-Gem used to parse return from Brazil banks in format of cnab files.
+Gem used to parse return from Brazil banks in format of cnab files. It is based on the version 08.7 of the cnab.
+Right now it has support only for Segmento T and Segmento U.
 
 ## Installation
 
@@ -20,10 +21,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    cnab = Cnab.parse('path/to/you/file')
+
+This method will return the file parsed in objects.
+
+## TODO
+
+* Add support for another type of segments
 
 ## Mantainers
 [@plribeiro3000](https://github.com/plribeiro3000)
+
 [@mfbmina](https://github.com/mfbmina)
 
 ## Contributing

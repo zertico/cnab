@@ -11,7 +11,7 @@ describe Cnab do
 
     context "with a file" do
       before :each do
-        @line = "#{LINE}\n"
+        @line = LINE.clone
         @line[13] = "T"
 
         File.open("cnab.txt", 'w') do |f|

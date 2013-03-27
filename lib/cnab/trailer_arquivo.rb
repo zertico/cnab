@@ -3,6 +3,8 @@ module Cnab
     include Helper
     
     def initialize(line)
+      raise Exceptions::LineNotParseable unless line.size == 242
+
       @banco                  = line[0..2]
       @lote                   = line[3..6]
       @registro               = line[7..7]

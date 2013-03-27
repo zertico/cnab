@@ -21,9 +21,17 @@ Or install it yourself as:
 
 ## Usage
 
-    cnab = Cnab.parse('path/to/you/file')
+```ruby
+cnab = Cnab.parse('path/to/you/file')
+```
 
 This method will return the file parsed in objects.
+
+If you need to merge the segments T and U, just pass true as the optional parameter:
+
+```ruby
+cnab = Cnab.parse('path/to/you/file', true)
+```
 
 ## TODO
 

@@ -22,7 +22,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-cnab = Cnab.parse('path/to/you/file')
+cnab = Cnab.parse('path/to/your/file')
 ```
 
 This method will return the file parsed in objects.
@@ -30,7 +30,7 @@ This method will return the file parsed in objects.
 If you need to merge the segments T and U, just pass true as the optional parameter:
 
 ```ruby
-cnab = Cnab.parse('path/to/you/file', true)
+cnab = Cnab.parse('path/to/your/file', true)
 ```
 
 ## TODO

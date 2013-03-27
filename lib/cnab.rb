@@ -11,7 +11,7 @@ module Cnab
   autoload :Helper, 'cnab/helper'
   autoload :Exceptions, 'cnab/exceptions'
 
-  def self.parse(file = nil)
+  def self.parse(file = nil, merge = false)
     raise Exceptions::NoFileGiven if file.nil?
 
     File.open(file, 'rb') do |f|
@@ -24,7 +24,11 @@ module Cnab
           trailer_lote = TrailerLote::Cobranca.new(line)
           break
         end
-        detalhes << Detalhe.parse(line)
+        if merge
+          detalhes << Detalhe.merge(line, f.gets)
+        else
+          detalhes << Detalhe.parse(line)
+        end
       end
 
       trailer_arquivo = TrailerArquivo.new(f.gets)

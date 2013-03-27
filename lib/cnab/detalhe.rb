@@ -14,5 +14,9 @@ module Cnab
           raise Exceptions::SegmentNotImplemented
       end
     end
+
+    def self.merge(line1, line2)
+      SegmentoTU.new(parse(line1), parse(line2))
+    end
   end
 end

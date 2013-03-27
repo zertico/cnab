@@ -30,4 +30,15 @@ describe Cnab::Detalhe do
       end
     end
   end
+
+  describe "#merge" do
+    before :each do
+      Cnab::Detalhe.stub(:parse).with("line1").and_return(Cnab::Detalhe::SegmentoT.new(LINE))
+      Cnab::Detalhe.stub(:parse).with("line2").and_return(Cnab::Detalhe::SegmentoU.new(LINE))
+    end
+
+    it "should return a Cnab::Detalhe::SegmentoTU instance" do
+      Cnab::Detalhe.merge("line1", "line2").should be_an_instance_of(Cnab::Detalhe::SegmentoTU)
+    end
+  end
 end

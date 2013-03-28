@@ -1,0 +1,24 @@
+08.7:
+  banco: 0..2
+  lote: 3..6
+  registro: 7..7
+  tipo_operacao: 8..8
+  tipo_servico: 9..10
+  res_cnab1: 11..12
+  layout_lote: 13..15
+  res_cnab2: 16..16
+  tipo_empresa: 17..17
+  num_empresa: 18..32
+  convenio: 33..52
+  agencia: 53..57
+  dv_agencia: 58..58
+  conta_corrente: 59..70
+  dv_conta: 71..71
+  dv_conta_agencia: 72..72
+  nome_empresa: 73..102
+  informacao1: 103..142
+  informacao2: 143..182
+  numero_remessa: 183..190
+  data_gravacao: 191..198
+  data_credito: 199..206
+  res_cnab3: 207..239

@@ -7,6 +7,8 @@ module Cnab
   autoload :TrailerLote, 'cnab/trailer_lote'
   autoload :Detalhe, 'cnab/detalhe'
   autoload :Retorno, 'cnab/retorno'
+  autoload :Definition, 'cnab/definition'
+  autoload :Definitions, 'cnab/definitions'
 
   autoload :Helper, 'cnab/helper'
   autoload :Exceptions, 'cnab/exceptions'

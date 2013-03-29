@@ -1,25 +1,24 @@
-08.7:
-  banco: 0..2
-  lote: 3..6
-  registro: 7..7
-  res_cnab1: 8..16
-  tipo_empresa: 17..17
-  num_empresa: 18..31
-  convenio: 32..51
-  agencia: 52..56
-  dv_agencia: 57..57
-  conta_corrente: 58..69
-  dv_conta: 70..70
-  dv_conta_agencia: 71..71
-  nome_empresa: 72..101
-  nome_banco: 102..131
-  res_cnab2: 132..141
-  cod_retorno: 142..142
-  data_geracao_arq: 143..150
-  hora_geracao_arq: 151..156
-  sequencia: 157..162
-  versao: 163..165
-  densidade: 166..170
-  res_banco: 171..190
-  res_empresa: 191..210
-  res_cnab3: 211..239
+banco: 0..2
+lote: 3..6
+registro: 7..7
+res_cnab1: 8..16
+tipo_empresa: 17..17
+num_empresa: 18..31
+convenio: 32..51
+agencia: 52..56
+dv_agencia: 57..57
+conta_corrente: 58..69
+dv_conta: 70..70
+dv_conta_agencia: 71..71
+nome_empresa: 72..101
+nome_banco: 102..131
+res_cnab2: 132..141
+cod_retorno: 142..142
+data_geracao_arq: 143..150
+hora_geracao_arq: 151..156
+sequencia: 157..162
+versao: 163..165
+densidade: 166..170
+res_banco: 171..190
+res_empresa: 191..210
+res_cnab3: 211..239

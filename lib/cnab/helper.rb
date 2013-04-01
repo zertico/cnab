@@ -1,11 +1,12 @@
 module Cnab
   module Helper
     def method_missing(method)
-      instance_variable_get("@#{method}")
+      return instance_variable_get("@#{method}") if instance_variable_defined?("@#{method}")
+      instance_variable_set("@#{method}", @line[@definition.send(method)].strip)
     end
 
     def respond_to_missing?(method_name, include_private = false)
-      return true unless instance_variable_get("@#{method_name}").nil?
+      return true unless definition.respond_to?(method_name)
       super
     end
 

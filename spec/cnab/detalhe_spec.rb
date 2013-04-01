@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Cnab::Detalhe do
+  let(:definition) { Cnab::Definition.new('08.7') }
+
   describe "#parse" do
     context "with a line of segmento U" do
       before :each do
@@ -9,7 +11,7 @@ describe Cnab::Detalhe do
       end
 
       it "should return a instance of SegmentoU" do
-        Cnab::Detalhe.parse(@line).should be_an_instance_of(Cnab::Detalhe::SegmentoU)
+        Cnab::Detalhe.parse(@line, definition).should be_an_instance_of(Cnab::Detalhe::SegmentoU)
       end
     end
 
@@ -20,25 +22,25 @@ describe Cnab::Detalhe do
       end
 
       it "should return a instance of SegmentoT" do
-        Cnab::Detalhe.parse(@line).should be_an_instance_of(Cnab::Detalhe::SegmentoT)
+        Cnab::Detalhe.parse(@line, definition).should be_an_instance_of(Cnab::Detalhe::SegmentoT)
       end
     end
 
     context "with a line of any other segmento" do
       it "should raise an error" do
-        lambda { Cnab::Detalhe.parse(LINE) }.should raise_error(Cnab::Exceptions::SegmentNotImplemented)
+        lambda { Cnab::Detalhe.parse(LINE, definition) }.should raise_error(Cnab::Exceptions::SegmentNotImplemented)
       end
     end
   end
 
   describe "#merge" do
     before :each do
-      Cnab::Detalhe.stub(:parse).with("line1").and_return(Cnab::Detalhe::SegmentoT.new(LINE))
-      Cnab::Detalhe.stub(:parse).with("line2").and_return(Cnab::Detalhe::SegmentoU.new(LINE))
+      @line = LINE.clone
+      @line[13] = "T"
     end
 
     it "should return a Cnab::Detalhe::SegmentoTU instance" do
-      Cnab::Detalhe.merge("line1", "line2").should be_an_instance_of(Cnab::Detalhe::SegmentoTU)
+      Cnab::Detalhe.merge(@line, @line, definition).should be_an_instance_of(Cnab::Detalhe::SegmentoTU)
     end
   end
 end

@@ -1,16 +1,20 @@
 require 'spec_helper'
 
 describe Cnab::TrailerArquivo do
+  before :each do
+    @definition = Cnab::Definitions::TrailerArquivo.new('08.7')
+  end
+
   describe "#initialize" do
     context "with a non valid line" do
       it "should raise an error" do
-        lambda { Cnab::TrailerArquivo.new("12345") }.should raise_error(Cnab::Exceptions::LineNotParseable)
+        lambda { Cnab::TrailerArquivo.new("12345", @definition) }.should raise_error(Cnab::Exceptions::LineNotParseable)
       end
     end
 
     context "with a valid line" do
       before :each do
-        @trailer_arquivo = Cnab::TrailerArquivo.new(LINE)
+        @trailer_arquivo = Cnab::TrailerArquivo.new(LINE, @definition)
       end
 
       it "should set #banco" do

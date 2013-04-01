@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe Cnab::Detalhe::SegmentoTU do
-  let(:segmento_t) { Cnab::Detalhe::SegmentoT.new(LINE) }
-  let(:segmento_u) { Cnab::Detalhe::SegmentoU.new(LINE) }
+  let(:definition_t) { Cnab::Definitions::SegmentoT.new('08.7') }
+  let(:definition_u) { Cnab::Definitions::SegmentoU.new('08.7') }
+  let(:segmento_t) { Cnab::Detalhe::SegmentoT.new(LINE, definition_t) }
+  let(:segmento_u) { Cnab::Detalhe::SegmentoU.new(LINE, definition_u) }
 
   describe "#method_missing" do
     before :each do

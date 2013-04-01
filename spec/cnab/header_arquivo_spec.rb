@@ -1,16 +1,20 @@
 require 'spec_helper'
 
 describe Cnab::HeaderArquivo do
+  before :each do
+    @definition = Cnab::Definitions::HeaderArquivo.new('08.7')
+  end
+
   context "with a non valid line" do
     it "should raise an error" do
-      lambda { Cnab::HeaderArquivo.new("12345") }.should raise_error(Cnab::Exceptions::LineNotParseable)
+      lambda { Cnab::HeaderArquivo.new("12345", @definition) }.should raise_error(Cnab::Exceptions::LineNotParseable)
     end
   end
 
   context "with a valid line" do
     describe "#initialize" do
       before :each do
-        @header_arquivo = Cnab::HeaderArquivo.new(LINE)
+        @header_arquivo = Cnab::HeaderArquivo.new(LINE, @definition)
       end
 
       it "should set #banco" do

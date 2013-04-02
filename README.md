@@ -2,8 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/cnab.png)](http://badge.fury.io/rb/cnab) [![Build Status](https://travis-ci.org/zertico/cnab.png)](https://travis-ci.org/zertico/cnab) [![Coverage Status](https://coveralls.io/repos/zertico/cnab/badge.png?branch=master)](https://coveralls.io/r/zertico/cnab) [![Code Climate](https://codeclimate.com/github/zertico/cnab.png)](https://codeclimate.com/github/zertico/cnab)
 
-Gem used to parse return from Brazil banks in format of cnab files. It is based on the version 08.7 of the cnab.
-Right now it has support only for Segmento T and Segmento U.
+Gem used to parse return from Brazil banks in format of cnab files.
+Right now it has support only for Segmento T and Segmento U. By default, it will parse based on the version 08.7.
 
 ## Installation
 
@@ -33,9 +33,17 @@ If you need to merge the segments T and U, just pass true as the optional parame
 cnab = Cnab.parse('path/to/your/file', true)
 ```
 
+If you need to parse a cnab file of another version, just pass it as the second optional parameter:
+
+```ruby
+cnab = Cnab.parse('path/to/your/file', true, 'santander')
+```
+
 ## TODO
 
 * Add support for another type of segments
+* Add support for another cnab versions
+* Refactor classes and mix headers and trailers
 
 ## Mantainers
 [@plribeiro3000](https://github.com/plribeiro3000)

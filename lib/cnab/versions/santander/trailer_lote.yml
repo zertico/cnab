@@ -1,7 +1,7 @@
 banco: 0..2
 lote: 3..6
 registro: 7..7
-res_cnab1: 8..16
+res_banco1: 8..16
 qtd_registros: 17..22
 qtd_titulos_simples: 23..28
 valor_titulos_simples: 29..45
@@ -12,4 +12,4 @@ valor_titulos_caucionada: 75..91
 qtd_titulos_descontada: 92..97
 valor_titulos_descontada: 98..114
 num_aviso: 115..122
-res_cnab1: 123..239
+res_banco1: 123..239

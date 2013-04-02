@@ -1,0 +1,17 @@
+banco: 0..2
+lote: 3..6
+registro: 7..7
+res_banco1: 8..15
+tipo_empresa: 16..16
+num_empresa: 17..31
+cod_transmissao: 32..46
+res_banco2: 47..71
+nome_empresa: 72..101
+nome_banco: 102..131
+res_banco3: 132..141
+cod_retorno: 142..142
+data_geracao_arq: 143..150
+res_banco4: 151..156
+sequencia: 157..162
+versao: 163..165
+res_banco5: 166..239

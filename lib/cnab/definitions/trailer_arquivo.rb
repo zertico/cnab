@@ -2,7 +2,7 @@ module Cnab
   module Definitions
     class TrailerArquivo
       def initialize(version)
-        @definition = YAML.load_file("lib/cnab/versions/#{version}/trailer_arquivo.yml")
+        @definition = YAML.load_file("#{Cnab.lib_path}/cnab/versions/#{version}/trailer_arquivo.yml")
       end
 
       def method_missing(method)

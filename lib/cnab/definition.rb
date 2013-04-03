@@ -1,7 +1,7 @@
 module Cnab
   class Definition
     def initialize(version)
-      raise Exceptions::VersionNotImplemented unless File.directory?("lib/cnab/versions/#{version}")
+      raise Exceptions::VersionNotImplemented unless File.directory?("#{Cnab.lib_path}/cnab/versions/#{version}")
 
       @header_arquivo = Definitions::HeaderArquivo.new(version)
       @header_lote = Definitions::HeaderLote.new(version)

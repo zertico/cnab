@@ -44,4 +44,12 @@ module Cnab
                     :trailer_arquivo => trailer_arquivo  })
     end
   end
+
+  def self.root_path
+    File.expand_path(File.join(File.dirname(__FILE__), '..'))
+  end
+
+  def self.lib_path
+    File.join(root_path, 'lib')
+  end
 end

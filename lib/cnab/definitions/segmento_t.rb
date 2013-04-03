@@ -2,7 +2,7 @@ module Cnab
   module Definitions
     class SegmentoT
       def initialize(version)
-        @definition = YAML.load_file("lib/cnab/versions/#{version}/segmento_t.yml")
+        @definition = YAML.load_file("#{Cnab.lib_path}/cnab/versions/#{version}/segmento_t.yml")
       end
 
       def method_missing(method)

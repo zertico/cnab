@@ -6,5 +6,7 @@ module Cnab
     autoload :TrailerLote, 'cnab/definitions/trailer_lote'
     autoload :SegmentoT, 'cnab/definitions/segmento_t'
     autoload :SegmentoU, 'cnab/definitions/segmento_u'
+
+    autoload :Helper, 'cnab/definitions/helper'
   end
 end

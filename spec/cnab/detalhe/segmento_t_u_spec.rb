@@ -20,7 +20,7 @@ describe Cnab::Detalhe::SegmentoTU do
     end
 
     it "should raise an error if no segmento has the attribute" do
-      lambda { @segmento_t_u.valor_total }.should raise_error(NoMethodError)
+      lambda { @segmento_t_u.valor_total }.should raise_error(NameError)
     end
   end
 end

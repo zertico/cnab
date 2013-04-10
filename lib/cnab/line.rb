@@ -1,5 +1,12 @@
 module Cnab
-  module Helper
+  class Line
+    def initialize(line, definition)
+      raise Exceptions::LineNotParseable unless line.size == 242
+
+      @line = line
+      @definition = definition
+    end
+
     def method_missing(method_name)
       return instance_variable_get("@#{method_name}") if instance_variable_defined?("@#{method_name}")
       instance_variable_set("@#{method_name}", @line[@definition.send(method_name)].strip)

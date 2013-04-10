@@ -13,11 +13,11 @@ describe Cnab do
     end
 
     it "should return a HeaderArquivo instance" do
-      Cnab.parse("spec/cnab.txt").header_arquivo.should be_an_instance_of(Cnab::HeaderArquivo)
+      Cnab.parse("spec/cnab.txt").header_arquivo.should be_an_instance_of(Cnab::Line)
     end
 
     it "should return a HeaderLote instance" do
-      Cnab.parse("spec/cnab.txt").header_lote.should be_an_instance_of(Cnab::HeaderLote::Cobranca)
+      Cnab.parse("spec/cnab.txt").header_lote.should be_an_instance_of(Cnab::Line)
     end
 
     it "should return an array of detalhes" do
@@ -25,16 +25,16 @@ describe Cnab do
     end
 
     it "should return a TrailerLote instance" do
-      Cnab.parse("spec/cnab.txt").trailer_lote.should be_an_instance_of(Cnab::TrailerLote::Cobranca)
+      Cnab.parse("spec/cnab.txt").trailer_lote.should be_an_instance_of(Cnab::Line)
     end
 
     it "should return a TrailerArquivo instance" do
-      Cnab.parse("spec/cnab.txt").trailer_arquivo.should be_an_instance_of(Cnab::TrailerArquivo)
+      Cnab.parse("spec/cnab.txt").trailer_arquivo.should be_an_instance_of(Cnab::Line)
     end
 
     context "with merge equal false" do
       it "should return an SegmentoT instance inside detalhes array" do
-        Cnab.parse("spec/cnab.txt").detalhes.first.should be_an_instance_of(Cnab::Detalhe::SegmentoT)
+        Cnab.parse("spec/cnab.txt").detalhes.first.should be_an_instance_of(Cnab::Line)
       end
     end
 

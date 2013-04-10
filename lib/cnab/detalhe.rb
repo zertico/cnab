@@ -1,15 +1,13 @@
 module Cnab
   module Detalhe
-    autoload :SegmentoT, 'cnab/detalhe/segmento_t'
-    autoload :SegmentoU, 'cnab/detalhe/segmento_u'
     autoload :SegmentoTU, 'cnab/detalhe/segmento_t_u'
 
     def self.parse(line, definition)
       case line[13]
         when "T"
-          SegmentoT.new(line, definition.segmento_t)
+          Cnab::Line.new(line, definition.segmento_t)
         when "U"
-          SegmentoU.new(line, definition.segmento_u)
+          Cnab::Line.new(line, definition.segmento_u)
         else
           raise Exceptions::SegmentNotImplemented
       end

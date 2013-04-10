@@ -10,8 +10,8 @@ describe Cnab::Detalhe do
         @line[13] = "U"
       end
 
-      it "should return a instance of SegmentoU" do
-        Cnab::Detalhe.parse(@line, definition).should be_an_instance_of(Cnab::Detalhe::SegmentoU)
+      it "should return a instance of Line" do
+        Cnab::Detalhe.parse(@line, definition).should be_an_instance_of(Cnab::Line)
       end
     end
 
@@ -21,8 +21,8 @@ describe Cnab::Detalhe do
         @line[13] = "T"
       end
 
-      it "should return a instance of SegmentoT" do
-        Cnab::Detalhe.parse(@line, definition).should be_an_instance_of(Cnab::Detalhe::SegmentoT)
+      it "should return a instance of Line" do
+        Cnab::Detalhe.parse(@line, definition).should be_an_instance_of(Cnab::Line)
       end
     end
 

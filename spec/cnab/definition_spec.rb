@@ -9,28 +9,28 @@ describe Cnab::Definition do
     end
 
     context "with an existent version" do
-      it "should initialize a header_arquivo instance" do
-        Cnab::Definition.new('08.7').header_arquivo.should be_an_instance_of(Cnab::Definitions::HeaderArquivo)
+      it "should load header_arquivo configs" do
+        Cnab::Definition.new('08.7').header_arquivo.should be_an_instance_of(Cnab::Definitions::File)
       end
 
-      it "should initialize a header_lote instance" do
-        Cnab::Definition.new('08.7').header_lote.should be_an_instance_of(Cnab::Definitions::HeaderLote)
+      it "should load header_lote configs" do
+        Cnab::Definition.new('08.7').header_lote.should be_an_instance_of(Cnab::Definitions::File)
       end
 
-      it "should initialize a segmento_t instance" do
-        Cnab::Definition.new('08.7').segmento_t.should be_an_instance_of(Cnab::Definitions::SegmentoT)
+      it "should load segmento_t configs" do
+        Cnab::Definition.new('08.7').segmento_t.should be_an_instance_of(Cnab::Definitions::File)
       end
 
-      it "should initialize a segmento_u instance" do
-        Cnab::Definition.new('08.7').segmento_u.should be_an_instance_of(Cnab::Definitions::SegmentoU)
+      it "should load segmento_u configs" do
+        Cnab::Definition.new('08.7').segmento_u.should be_an_instance_of(Cnab::Definitions::File)
       end
 
-      it "should initialize a trailer_lote instance" do
-        Cnab::Definition.new('08.7').trailer_lote.should be_an_instance_of(Cnab::Definitions::TrailerLote)
+      it "should load trailer_lote configs" do
+        Cnab::Definition.new('08.7').trailer_lote.should be_an_instance_of(Cnab::Definitions::File)
       end
 
-      it "should initialize a trailer_arquivo instance" do
-        Cnab::Definition.new('08.7').trailer_arquivo.should be_an_instance_of(Cnab::Definitions::TrailerArquivo)
+      it "should load trailer_arquivo configs" do
+        Cnab::Definition.new('08.7').trailer_arquivo.should be_an_instance_of(Cnab::Definitions::File)
       end
     end
   end

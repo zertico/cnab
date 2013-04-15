@@ -3,12 +3,12 @@ module Cnab
     def initialize(version)
       raise Exceptions::VersionNotImplemented unless File.directory?("#{Cnab.lib_path}/cnab/versions/#{version}")
 
-      @header_arquivo = Definitions::HeaderArquivo.new(version)
-      @header_lote = Definitions::HeaderLote.new(version)
-      @segmento_t = Definitions::SegmentoT.new(version)
-      @segmento_u = Definitions::SegmentoU.new(version)
-      @trailer_lote = Definitions::TrailerLote.new(version)
-      @trailer_arquivo = Definitions::TrailerArquivo.new(version)
+      @header_arquivo = Definitions::File.new(version, 'header_arquivo')
+      @header_lote = Definitions::File.new(version, 'header_lote')
+      @segmento_t = Definitions::File.new(version, 'segmento_t')
+      @segmento_u = Definitions::File.new(version, 'segmento_u')
+      @trailer_lote = Definitions::File.new(version, 'trailer_lote')
+      @trailer_arquivo = Definitions::File.new(version, 'trailer_arquivo')
     end
 
     def method_missing(method_name)

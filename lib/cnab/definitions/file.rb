@@ -1,6 +1,10 @@
 module Cnab
   module Definitions
-    module Helper
+    class File
+      def initialize(version, file)
+        @definition = YAML.load_file("#{Cnab.lib_path}/cnab/versions/#{version}/#{file}.yml")
+      end
+
       def method_missing(method_name)
         range = @definition[method_name.to_s].split('..')
         Integer(range[0])..Integer(range[1])

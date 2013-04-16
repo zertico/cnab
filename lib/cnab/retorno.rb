@@ -1,5 +1,7 @@
 module Cnab
   class Retorno
+    include PrettyInspect
+
     def initialize(args = {})
       @header_arquivo = args[:header_arquivo]
       @header_lote = args[:header_lote]
@@ -16,13 +18,6 @@ module Cnab
     def respond_to_missing?(method_name, include_private = false)
       return true if instance_variable_defined?("@#{method_name}")
       super
-    end
-
-    def inspect
-      variables = instance_variables.map do |instance_variable|
-        "#{instance_variable.to_s.gsub('@', '')}: \"#{instance_variable_get(instance_variable)}\""
-      end.join(", ")
-      "<#{self.class.name} #{variables}>"
     end
   end
 end

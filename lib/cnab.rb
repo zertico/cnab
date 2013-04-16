@@ -8,6 +8,7 @@ module Cnab
   autoload :Retorno, 'cnab/retorno'
   autoload :Config, 'cnab/config'
   autoload :Configs, 'cnab/configs'
+  autoload :PrettyInspect, 'cnab/pretty_inspect'
 
   autoload :Exceptions, 'cnab/exceptions'
 

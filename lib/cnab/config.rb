@@ -1,7 +1,7 @@
 module Cnab
   class Config
     def initialize(version, file)
-      @definition = YAML.load_file("#{Cnab.lib_path}/cnab/versions/#{version}/#{file}.yml")
+      @definition = YAML.load_file("#{Cnab.config_path}/#{version}/#{file}.yml")
     end
 
     def method_missing(method_name)

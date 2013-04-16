@@ -46,7 +46,7 @@ module Cnab
     File.expand_path(File.join(File.dirname(__FILE__), '..'))
   end
 
-  def self.lib_path
-    File.join(root_path, 'lib')
+  def self.config_path
+    File.join(root_path, 'config')
   end
 end

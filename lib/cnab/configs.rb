@@ -1,7 +1,7 @@
 module Cnab
   class Configs
     def initialize(version)
-      raise Exceptions::VersionNotImplemented unless File.directory?("#{Cnab.lib_path}/cnab/versions/#{version}")
+      raise Exceptions::VersionNotImplemented unless File.directory?("#{Cnab.config_path}/#{version}")
 
       @header_arquivo = Config.new(version, 'header_arquivo')
       @header_lote = Config.new(version, 'header_lote')

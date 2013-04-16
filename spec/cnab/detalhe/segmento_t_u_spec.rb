@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Cnab::Detalhe::SegmentoTU do
-  let(:definition_t) { Cnab::Definitions::File.new('08.7', 'segmento_t') }
-  let(:definition_u) { Cnab::Definitions::File.new('08.7', 'segmento_u') }
+  let(:definition_t) { Cnab::Config.new('08.7', 'segmento_t') }
+  let(:definition_u) { Cnab::Config.new('08.7', 'segmento_u') }
   let(:segmento_t) { Cnab::Line.new(LINE, definition_t) }
   let(:segmento_u) { Cnab::Line.new(LINE, definition_u) }
 

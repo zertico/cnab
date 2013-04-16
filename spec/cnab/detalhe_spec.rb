@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Cnab::Detalhe do
-  let(:definition) { Cnab::Definition.new('08.7') }
+  let(:definition) { Cnab::Configs.new('08.7') }
 
   describe "#parse" do
     context "with a line of segmento U" do

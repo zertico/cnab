@@ -1,14 +1,14 @@
 module Cnab
-  class Definition
+  class Configs
     def initialize(version)
       raise Exceptions::VersionNotImplemented unless File.directory?("#{Cnab.lib_path}/cnab/versions/#{version}")
 
-      @header_arquivo = Definitions::File.new(version, 'header_arquivo')
-      @header_lote = Definitions::File.new(version, 'header_lote')
-      @segmento_t = Definitions::File.new(version, 'segmento_t')
-      @segmento_u = Definitions::File.new(version, 'segmento_u')
-      @trailer_lote = Definitions::File.new(version, 'trailer_lote')
-      @trailer_arquivo = Definitions::File.new(version, 'trailer_arquivo')
+      @header_arquivo = Config.new(version, 'header_arquivo')
+      @header_lote = Config.new(version, 'header_lote')
+      @segmento_t = Config.new(version, 'segmento_t')
+      @segmento_u = Config.new(version, 'segmento_u')
+      @trailer_lote = Config.new(version, 'trailer_lote')
+      @trailer_arquivo = Config.new(version, 'trailer_arquivo')
     end
 
     def method_missing(method_name)

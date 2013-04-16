@@ -5,15 +5,15 @@ module Cnab
   autoload :Line, 'cnab/line'
   autoload :Detalhe, 'cnab/detalhe'
   autoload :Retorno, 'cnab/retorno'
-  autoload :Definition, 'cnab/definition'
-  autoload :Definitions, 'cnab/definitions'
+  autoload :Config, 'cnab/config'
+  autoload :Configs, 'cnab/configs'
 
   autoload :Exceptions, 'cnab/exceptions'
 
   def self.parse(file = nil, merge = false, version = '08.7')
     raise Exceptions::NoFileGiven if file.nil?
 
-    definition = Cnab::Definition.new(version)
+    definition = Cnab::Configs.new(version)
 
     File.open(file, 'rb') do |f|
       header_arquivo = Line.new(f.gets, definition.header_arquivo)

@@ -40,7 +40,7 @@ describe Cnab::Detalhe do
     end
 
     it "should return a Cnab::Detalhe::SegmentoTU instance" do
-      Cnab::Detalhe.merge(@line, @line, definition).should be_an_instance_of(Cnab::Detalhe::SegmentoTU)
+      Cnab::Detalhe.merge(@line, @line, definition).should be_an_instance_of(Cnab::MergedLines)
     end
   end
 end

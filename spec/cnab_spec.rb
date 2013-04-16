@@ -40,7 +40,7 @@ describe Cnab do
 
     context "with merge equal true" do
       it "should return an SegmentoTU instance inside detalhes array" do
-        Cnab.parse("spec/cnab.txt", true).detalhes.first.should be_an_instance_of(Cnab::Detalhe::SegmentoTU)
+        Cnab.parse("spec/cnab.txt", true).detalhes.first.should be_an_instance_of(Cnab::MergedLines)
       end
     end
   end

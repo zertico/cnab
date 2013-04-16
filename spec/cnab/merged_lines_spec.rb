@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Cnab::Detalhe::SegmentoTU do
+describe Cnab::MergedLines do
   let(:definition_t) { Cnab::Config.new('08.7', 'segmento_t') }
   let(:definition_u) { Cnab::Config.new('08.7', 'segmento_u') }
   let(:segmento_t) { Cnab::Line.new(LINE, definition_t) }
@@ -8,7 +8,7 @@ describe Cnab::Detalhe::SegmentoTU do
 
   describe "#method_missing" do
     before :each do
-      @segmento_t_u = Cnab::Detalhe::SegmentoTU.new(segmento_t, segmento_u)
+      @segmento_t_u = Cnab::MergedLines.new(segmento_t, segmento_u)
     end
 
     it "should call attributes on segmento_t object when it exists" do

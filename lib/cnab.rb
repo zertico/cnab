@@ -3,6 +3,7 @@ require "yaml"
 
 module Cnab
   autoload :Line, 'cnab/line'
+  autoload :MergedLines, 'cnab/merged_lines'
   autoload :Detalhe, 'cnab/detalhe'
   autoload :Retorno, 'cnab/retorno'
   autoload :Config, 'cnab/config'

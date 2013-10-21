@@ -8,6 +8,12 @@ describe Cnab do
       end
     end
 
+    context "with a bad file" do
+      it "should raise an exception" do
+        lambda { Cnab.parse("spec/bad_cnab.txt") }.should raise_error Cnab::Exceptions::MissingLines
+      end
+    end
+
     it "should return a Retorno instance" do
       Cnab.parse("spec/cnab.txt").should be_an_instance_of(Cnab::Retorno)
     end

@@ -12,6 +12,7 @@ module Cnab
 
   def self.parse(file = nil, merge = false, version = '08.7')
     raise Exceptions::NoFileGiven if file.nil?
+    raise Exceptions::MissingLines if %x{wc -l #{file}}.scan(/[0-9]+/).first.to_i < 5
 
     definition = Cnab::Definition.new(version)
 

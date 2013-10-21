@@ -3,10 +3,12 @@ require "yaml"
 
 module Cnab
   autoload :Line, 'cnab/line'
+  autoload :MergedLines, 'cnab/merged_lines'
   autoload :Detalhe, 'cnab/detalhe'
   autoload :Retorno, 'cnab/retorno'
-  autoload :Definition, 'cnab/definition'
-  autoload :Definitions, 'cnab/definitions'
+  autoload :Config, 'cnab/config'
+  autoload :Configs, 'cnab/configs'
+  autoload :PrettyInspect, 'cnab/pretty_inspect'
 
   autoload :Exceptions, 'cnab/exceptions'
 
@@ -14,7 +16,7 @@ module Cnab
     raise Exceptions::NoFileGiven if file.nil?
     raise Exceptions::MissingLines if %x{wc -l #{file}}.scan(/[0-9]+/).first.to_i < 5
 
-    definition = Cnab::Definition.new(version)
+    definition = Cnab::Configs.new(version)
 
     File.open(file, 'rb') do |f|
       header_arquivo = Line.new(f.gets, definition.header_arquivo)
@@ -46,7 +48,7 @@ module Cnab
     File.expand_path(File.join(File.dirname(__FILE__), '..'))
   end
 
-  def self.lib_path
-    File.join(root_path, 'lib')
+  def self.config_path
+    File.join(root_path, 'config')
   end
 end

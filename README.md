@@ -42,7 +42,6 @@ cnab = Cnab.parse('path/to/your/file', true, 'santander')
 ## TODO
 
 * Add support for another type of segments
-* Add support for another cnab versions
 * Refactor classes and mix headers and trailers
 
 ## Mantainers

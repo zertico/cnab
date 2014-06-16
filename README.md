@@ -47,8 +47,6 @@ cnab = Cnab.parse('path/to/your/file', true, 'santander')
 ## Mantainers
 [@plribeiro3000](https://github.com/plribeiro3000)
 
-[@mfbmina](https://github.com/mfbmina)
-
 ## Contributing
 
 1. Fork it
